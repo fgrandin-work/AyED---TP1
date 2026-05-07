@@ -53,10 +53,53 @@ def MayorMenor():
 
     print(nroAleatorio)
 
+def NumeroSecreto():
+    IntentosRestantes = 4
+    nroAleatorio = random.randint(1,100)
+    finDeJuego = 0
+    
+    print("Ingrese un numero:")
+    nroElejido = int(input())
+
+    #Valida que el número ingresado este entre 1 y 100
+    while(nroElejido < 1 or nroElejido > 100):
+        print("El número elejido debe estar entre 1 y 100.")
+        print("Ingrese otro número:")
+        nroElejido = int(input())
+    #agregar validacion 1-100
+    while(nroElejido != nroAleatorio and IntentosRestantes > 0):
+
+        if(nroElejido > nroAleatorio):
+            print("El número secreto es menor al ingresado.")
+            print("Ingrese otro número:")
+            nroElejido = int(input())
+
+            while(nroElejido < 1 or nroElejido > 100):
+                print("El número elejido debe estar entre 1 y 100.")
+                print("Ingrese otro número:")
+                nroElejido = int(input())
+
+        else:
+            print("El número secreto es mayor al ingresado.")
+            print("Ingrese otro número:")
+            nroElejido = int(input())
+
+            while(nroElejido < 1 or nroElejido > 100):
+                print("El número elejido debe estar entre 1 y 100.")
+                print("Ingrese otro número:")
+                nroElejido = int(input())
+
+        IntentosRestantes = IntentosRestantes-1
+
+    if(nroElejido == nroAleatorio):
+        print("¡Ganaste! El número secreto era:", nroAleatorio)
+    else:
+        print("¡Perdiste! El número secreto era:", nroAleatorio)
+
 # acá comienza el Programa Principal
 opc = " " # así lo obligo a entrar al mientras y lo convierto en un Repetir
-MayorMenor()
-print(puntajeMayorMenor)
+#MayorMenor()
+NumeroSecreto()
 """ 
 while (opc!="S"):
     MENU()
@@ -65,7 +108,7 @@ while (opc!="S"):
         opc = str(input("Ingreso Invalido - reintente "))
         match opc:
             case "A": MayorMenor()
-            case "B": Juego2
+            case "B": NumeroSecreto()
             case "C": cartel()#blackjack
             case "D": Juego4t
             case "E": cartel()#reporte
