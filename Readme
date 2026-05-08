@@ -1,45 +1,45 @@
-<h1>Trabajo práctico nro 1 - Algorimos y estructuras de datos</h1>
+# Trabajo práctico nro 1 - Algorimos y estructuras de datos
 
-<h2>Testings a realizar:</h2>
+## Testings a realizar:
 
-<h3>Menu principal</h3>
+### Menu principal
 - Ingresar caracteres dintitos de A, B, C, D, E, S 
 - Ingresar numeros 
 - Probar cada opcion, debe ingresar a la sección correpondiente, o cerrar el programa en caso de S
 
-<h3>Juego Mayor - Menor</h3>
-<h4>Menu</h4>
+### Juego Mayor - Menor
+#### Menu
 - Estresar campo "Ingrese nombre" (no permitir string vacia)
 - Corroborar menu (que no se puedan introducir caracteres fuera de A, B, C)
 - Cada opcion debe hacer lo esperado
 - Leer reglas, deben ser claras y correctas 
-<h4>Dentro del juego</h4>
+#### Dentro del juego
 - Ingresar string distintos a mayor, menor o salir
 - Validar que se sumen los puntos correctamente al ganar, y se reinicien al perder
 
-<h3>Juego Adivinar numero secreto</h3>
-<h4>Menu</h4>
+### Juego Adivinar numero secreto
+#### Menu
 - Estresar campo "Ingrese nombre" (no permitir string vacia)
 - Corroborar menu (que no se puedan introducir caracteres fuera de A, B, C)
 - Cada opcion debe hacer lo esperado¨
 - Leer reglas, deben ser claras y correctas 
-<h4>Dentro del juego</h4>
+#### Dentro del juego
 - Ingresar caracteres no numericos o dar enter sin ingresar nada
 - Ingresar numeros fuera del rango 1-100
 - Validar que se gane el juego adivinando el numero, en intento 1, 3 y 5, para asegurar que funciona antes del while, durante el while con intentosRestantes=n y durante el while con intentosRestantes=0
 
-<h3>Juego par o impar</h3>
-<h4>Menu</h4>
+### Juego par o impar
+#### Menu
 - Estresar campo "Ingrese nombre" (no permitir string vacia)
 - Corroborar menu (que no se puedan introducir caracteres fuera de A, B, C)
 - Cada opcion debe hacer lo esperado¨
 - Leer reglas, deben ser claras y correctas 
-<h4>Dentro del juego</h4>
+#### Dentro del juego
 - Ingresar string distintos a par, impar o salir
 - Validar que se sumen los puntos correctamente al ganar, y se reinicien al perder
 
 
-<h2>Temas a ver:</h2>
+## Temas a ver:
 -Consultar cuando debe pedir el nombre (por juego o por programa) y como almacenarlo
 -Juego mayor menor, generar un nuevo numero cuando perdes
 -Reglas numero secreto, el numero deintentos es 5 (en el código la variable es 4 porque se hace un intento antes de entrar al while)
