@@ -1,5 +1,13 @@
 import random
 
+
+
+##########################################################
+######### NO FUNCIONA EL NUMERO SECRETO OPCION B #########
+##########################################################
+
+
+
 ######################## Variables de Puntajes Globales ########################
 
 nombredeuser = ''
@@ -19,10 +27,8 @@ perdidasParOImpar = 0
 
 def MenuGeneral():
     print("""
-    Los juegos de apuesta están prohibidos para los menores de edad y es perjudicial para la salud.
-    ####################
-    ### ¡Bienvenido! ###
-    ####################
+    ####################### ¡Bienvenido! #######################
+    ** Los juegos de apuesta están prohibidos para los menores de edad y es perjudicial para la salud. **
     Selecciona el juego colocando su letra correspondiente(Ej: A):
     A - Juego del menor-mayor
     B - Adivinar el número secreto
@@ -33,9 +39,11 @@ def MenuGeneral():
     """)
 
 def MenuJuegos():
-    nombreUser = input("Ingrese su nombre: ").capitalize()
+    global nombredeuser 
+    nombredeuser = input("Ingrese su nombre: ").capitalize()
+
     print(f"""
-    BIENVENIDO {nombreUser}!
+    BIENVENIDO {nombredeuser}!
     A - Iniciar juego
     B - Ver reglas
     C - Volver al menu
@@ -94,6 +102,7 @@ def ReglasParOImpar():
 
 def JuegoMayorMenor():
     global puntajeMayorMenor
+    global vecesjugadoMyM
 
     nroAleatorio = random.randint(1,1000)
     nroAleatorioParaaAdivinar = random.randint(1,1000)
@@ -112,7 +121,10 @@ def JuegoMayorMenor():
         ReglasMayorMenor()
         finDeJuego = 0
     elif(opcionmenujuego == 'c'):
-        print("volver atras reyes 8==D")
+        finDeJuego = 1
+    else:
+        print("Ingrese una opción válida.")
+
 
 
     while(finDeJuego == 0):
@@ -146,6 +158,7 @@ def JuegoMayorMenor():
                 print(f"Superaste tu marca personal anterior, se ha actualizado tu puntaje máximo.")
                 puntajeMayorMenor = puntaje
             puntaje = 0
+            vecesjugadoMyM += 1
 
         # Evitar igualdad en la aleatoriedad del número nuevo y el anterior
         while(nroAleatorioParaaAdivinar == nroAleatorio):
@@ -157,17 +170,32 @@ def JuegoMayorMenor():
 
 ######################## B - Número secreto ########################
 
-def ValidacionNumeroSecreto(nroIngresado):
+def ValidacionNumeroSecretoRango(nroIngresado):
     while(nroIngresado < 1 or nroIngresado > 100):
         print("El número ingresado debe estar entre 1 y 100.")
         print("Ingrese otro número:")
         nroIngresado = int(input())
+
+def ValidacionNumeroSecretoTipoDeDato(numeroingresadoValido):
+    while (not numeroingresadoValido):
+        nroIngresado = input("Ingrese un numero: ")
+        try:
+            nroIngresado = int(nroIngresado)
+            numeroingresadoValido = True
+            return nroIngresado
+        except:
+            print("Ingrese un número. Intente nuevamente.")
+    numeroingresadoValido = False
     
 def JuegoNumeroSecreto():
-    global puntajeNumeroSecreto
+    global vecesjugadoNS
+    global ganadasNumeroSecreto
+    global perdidasNumeroSecreto
+    
+    numeroingresadoValido = False
     IntentosRestantes = 4
     nroAleatorio = random.randint(1,100)
-    finDeJuego= 1
+    finDeJuego = 1
     
     # Menú del juego y nombre usuario
     MenuJuegos()
@@ -179,38 +207,45 @@ def JuegoNumeroSecreto():
     elif(opcionmenujuego == 'b'):
         ReglasNumeroSecreto()
     elif(opcionmenujuego == 'c'):
-        print("voilver atras reyes 8==D")   
+        finDeJuego = 1  
+    else:
+        print("Ingrese una opción válida.")
 
-    nroIngresado = int(input("Ingrese un numero: "))
+    while(finDeJuego == 0):
 
-    # Validación
-    ValidacionNumeroSecreto(nroIngresado)
-        
-    while(nroIngresado != nroAleatorio and IntentosRestantes > 0):
+        # Petición y Validación de Tipo de dato ingresado
+        nroIngresado = ValidacionNumeroSecretoTipoDeDato(numeroingresadoValido)
+        # Validación por rango
+        ValidacionNumeroSecretoRango(nroIngresado)
+            
+        while(nroIngresado != nroAleatorio and IntentosRestantes > 0):
 
-        if(nroIngresado > nroAleatorio):
-            print("El número secreto es menor al ingresado.")
-            print("Ingrese otro número:")
-            nroIngresado = int(input())
+            if(nroIngresado > nroAleatorio):
+                print("El número secreto es menor al ingresado.")
 
-            # Validación
-            ValidacionNumeroSecreto(nroIngresado)
+                # Petición y Validación de Tipo de dato ingresado
+                nroIngresado = ValidacionNumeroSecretoTipoDeDato(numeroingresadoValido)
+                # Validación por rango
+                ValidacionNumeroSecretoRango(nroIngresado)
 
-        else:
-            print("El número secreto es mayor al ingresado.")
-            print("Ingrese otro número:")
-            nroIngresado = int(input())
+            elif (nroIngresado > nroAleatorio):
+                print("El número secreto es mayor al ingresado.")
 
-            # Validación
-            ValidacionNumeroSecreto(nroIngresado)
+                # Petición y Validación de Tipo de dato ingresado
+                nroIngresado = ValidacionNumeroSecretoTipoDeDato(numeroingresadoValido)
+                # Validación por rango
+                ValidacionNumeroSecretoRango(nroIngresado)
 
-        IntentosRestantes = IntentosRestantes-1
+            IntentosRestantes = IntentosRestantes-1
 
     # Fín del juego
     if(nroIngresado == nroAleatorio):
+        vecesjugadoNS += 1
+        ganadasNumeroSecreto += 1
         print("¡Ganaste! El número secreto era:", nroAleatorio)
-        puntajeNumeroSecreto += 1
     else:
+        vecesjugadoNS += 1
+        perdidasNumeroSecreto += 1
         print("¡Perdiste! El número secreto era:", nroAleatorio)
 
 ######################## C - BLACK JACK ########################
@@ -228,8 +263,10 @@ def JuegoBlackJack():
 ######################## D - Par o impar ########################
 
 def JuegoParOImpar():
-    global puntajeParOImpar
-    puntaje = 0
+    global ganadasParOImpar
+    global perdidasParOImpar
+    global vecesjugadoPoI
+    
     finDeJuego = 1
 
     # Menú del juego y nombre usuario
@@ -243,7 +280,9 @@ def JuegoParOImpar():
         ReglasParOImpar()
         finDeJuego = 0
     elif(opcionmenujuego == 'c'):
-        print("voilver atras reyes 8==D")
+        finDeJuego = 1
+    else:
+        print("Ingrese una opción válida.")
     
     while (finDeJuego == 0):
         dadoA = random.randint(1, 6)
@@ -267,25 +306,52 @@ def JuegoParOImpar():
     
         # Comparación de respuesta del usuario y los dados
         if (suma % 2 == 0 and respuesta == 'par' or suma % 2 != 0 and respuesta == 'impar'):
-            puntaje += 1
+            ganadasParOImpar += 1
+            vecesjugadoPoI += 1
             print(f"Acertaste! Los números fueron {dadoA} y {dadoB}, y suman {suma}.")
         elif (respuesta == 'salir'):
             finDeJuego = 1
         else:
             print(f"Te equivocaste! Los números fueron {dadoA} y {dadoB}, y suman {suma}.")
-            print(f"Tu puntaje alcanzado fue: {puntaje}")
-            puntaje = 0
+            vecesjugadoPoI += 1
+            perdidasParOImpar += 1
 
 ######################## REPORTES ########################
 
 def Reportes():
-    global puntajeMayorMenor
-    global puntajeNumeroSecreto
-    global puntajeParOImpar
 
-    print("""
+    finDeJuego = 0
+
+    # Globales 
+    global nombredeuser 
+    # Mayor y Menor
+    global vecesjugadoMyM
+    global puntajeMayorMenor 
+    # Numero Secreto
+    global vecesjugadoNS
+    global ganadasNumeroSecreto 
+    global perdidasNumeroSecreto 
+    # Par o Impar
+    global vecesjugadoPoI
+    global ganadasParOImpar 
+    global perdidasParOImpar 
+
+    print(f"""
+    REPORTES:
+    Nombre de usuario : {nombredeuser}
+
+    Cantidad de veces jugadas:
+        Mayor y menor: {vecesjugadoMyM}
+            Mejor puntaje en Mayor y Menor: {puntajeMayorMenor}
+        Número Secreto: {vecesjugadoNS}
+            Cantidad de ganadas: {ganadasNumeroSecreto}
+            Cantidad de perdidas: {perdidasNumeroSecreto}
+        Par o Impar: {vecesjugadoPoI}
+            Cantidad de ganadas: {ganadasParOImpar}
+            Cantidad de perdidas: {perdidasParOImpar}
 
     """)
+    input("Presiona enter para volver al menu principal.")
 
 ######################## Testing de partes individualmente ########################
 
@@ -301,19 +367,25 @@ def Reportes():
 
 opc = "" # así lo obligo a entrar al mientras y lo convierto en un Repetir
 
-while (opc!="S"):
+while (opc!="s"):
 
     MenuGeneral()
-    opc = str(input("Ingrese su opcion: "))
+    opc = input("Ingrese su opcion: ").lower()
 
     # Validación de opción de usuario
-    while (opc<"A" or opc>"E" and opc!= "S"):
-        opc = str(input("Ingreso Invalido - reintente "))
-        match opc:
-            case "A": JuegoMayorMenor()
-            case "B": JuegoNumeroSecreto()
-            case "C": JuegoBlackJack()#blackjack
-            case "D": JuegoParOImpar()
-            case "E": cartel()#reporte
-            case "S": print('\n\n GRACIAS POR USAR NUESTRO SISTEMA!!!!')
+    while (opc<"a" or opc>"e" and opc!= "s"):
+        MenuGeneral()
+        opc = input("Opción inválida. Intente nuevamente:").lower()
+    
+    match opc:
+        case "a": JuegoMayorMenor()
+        case "b": JuegoNumeroSecreto()
+        case "c": JuegoBlackJack()
+        case "d": JuegoParOImpar()
+        case "e": Reportes()
+        case "s": print('\n ¡GRACIAS POR USAR NUESTRO SISTEMA!')
+    if (opc != 's'):
+        opc = ''
+
+            
 
