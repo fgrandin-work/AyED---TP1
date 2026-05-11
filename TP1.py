@@ -15,47 +15,134 @@ vecesjugadoPoI = 0
 ganadasParOImpar = 0 
 perdidasParOImpar = 0 
 
-######################## Menús ########################
+######################## Menús #####################################
 
 def MenuGeneral():
+    print("\n" * 15)
     print("""
-    Los juegos de apuesta están prohibidos para los menores de edad y es perjudicial para la salud.
-    ####################
-    ### ¡Bienvenido! ###
-    ####################
-    Selecciona el juego colocando su letra correspondiente(Ej: A):
-    A - Juego del menor-mayor
-    B - Adivinar el número secreto
-    C - BlackJack
-    D - Par o impar
-    E - Reporte
-    S - Salir del programa
+\033[32m 
+          
+
+
+
+
+|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|
+|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|
+|#|#                                                                                 #|#|
+|#|#\033[37m        __                 __          /\     ___                 __           \033[32m  #|#|
+|#|#\033[37m      #|  |  __ __   ____ |  | __   #_(__)/ #|   |   ____   ____ |__| ____     \033[32m  #|#|
+|#|#\033[37m      #|  | |  |  \_/ ___\|  |/ /  #/    \  #|   |  /  _ \ / ___\|  |/ ___\    \033[32m  #|#|
+|#|#\033[37m      #|  |_|  |  /\  \___|    <  #|   |  \ #|   |_(  <_> ) /_/  >  \  \___    \033[32m  #|#|
+|#|#\033[37m      #|____/____/  \___  >__|_ \ #|___|  / #|____/\____/\___  / |__|\___  >   \033[32m  #|#|
+|#|#\033[37m                        \/     \/       \/              /_____/          \/    \033[32m  #|#|
+|#|#                                                                                 #|#|
+|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|
+|#|#|                                                                               |#|#|
+|#|#|                              ¡Bienvenido!                                     |#|#|
+|#|#|                               ¯¯¯¯¯¯¯¯¯¯                                      |#|#|
+|#|#|    \033[37m Selecciona el juego colocando su letra correspondiente(Ej: A):\033[32m            |#|#|
+|#|#|    \033[37m A - Juego del menor-mayor                                     \033[32m            |#|#|
+|#|#|    \033[37m B - Adivinar el número secreto                                \033[32m            |#|#|
+|#|#|    \033[37m C - BlackJack                                                 \033[32m            |#|#|
+|#|#|    \033[37m D - Par o impar                                               \033[32m            |#|#|
+|#|#|    \033[37m E - Reporte                                                   \033[32m            |#|#|
+|#|#|    \033[37m S - Salir del programa                                        \033[32m            |#|#|
+|#|#|                                                                               |#|#|
+|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|
     """)
 
 def MenuJuegos():
-    nombreUser = input("Ingrese su nombre: ").capitalize()
-    print(f"""
-    BIENVENIDO {nombreUser}!
-    A - Iniciar juego
-    B - Ver reglas
-    C - Volver al menu
+    print("\n" * 5)
+    nombreUser = input("\033[33m    Ingrese su nombre: \033[0m").capitalize()
+    print("\n" * 20)
+    print(f"""          
+           \033[32m¡BIENVENIDO {nombreUser}!\033[0m         
+
+\033[32m 
+|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|
+|#|#                                     #|#|
+|#|#\033[37m         A - Iniciar juego           \033[32m#|#|
+|#|#\033[37m         B - Ver reglas              \033[32m#|#|
+|#|#\033[37m         C - Volver al menu          \033[32m#|#|
+|#|#                                     #|#|
+|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|\033[0m 
     """)
     
+
+def InicioMayorMenor():
+    print("\n" * 15)
+    print("""
+\033[32m          
+|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#||#|#||#|#||#|#||#|#|#|#|
+|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#||#|#||#|#||#|#||#|#|#|#| 
+|#|#                                                                                                         #|#|
+|#|#\033[37m       _    _                                                                            _________      \033[32m #|#|
+|#|#\033[37m     #| \  / \  _____  ___.__. ___________     ____      _____   ____   ____   __________\_____   \     \033[32m #|#|
+|#|#\033[37m     #|  \/   \ \__ \ <   |  |/  _ \_  __ \  #/  _ \   #/     \_/ __ \ /    \ /  _ \_  __ \ /   __/      \033[32m#|#| 
+|#|#\033[37m     #|  /\    \ / __\.\___  (  <_> )  | \/  (  <_> ) #|  Y Y  \  ___/|   |  (  <_> )  | \/|   |         \033[32m#|#| 
+|#|#\033[37m     #|_|  |_   (____  / ____|\____/|__|     #\____/  #|__|_|  /\___  >___|  /\____/|__|   |___|         \033[32m#|#| 
+|#|#\033[37m             \/      \/\/                                    \/     \/     \/              <___>         \033[32m#|#| 
+|#|#                                                                                                         #|#| 
+|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#||#|#||#|#||#|#||#|#|#|#| 
+|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#||#|#||#|#||#|#||#|#|#|#| 
+    """)
+
+def InicioNumeroSecreto():
+    print("\n" * 15)
+    print("""
+    \033[32m
+|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|
+|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|
+|#|#                                                                                           #|#|
+|#|#\033[37m       ____   __                     _________                            __               \033[32m#|#|
+|#|#\033[37m      #\   \ \  | _____  ____      #/   _____/ ____   ___________   _____/  |_  ____       \033[32m#|#|
+|#|#\033[37m      #/ |\ \ | ||  __ \/  _ \     #\_____  \_/ __ \_/ ___\_  __ \_/ __ \   __\/  _ \      \033[32m#|#|
+|#|#\033[37m     #/  | \ \| ||  | \(  <_> )    #/        \  ___/\  \___|  | \/\  ___/|  | (  <_> )     \033[32m#|#|
+|#|#\033[37m     #\__|  \__  /__|   \____/ *  #/_______  /\___  >\___  >__|    \___  >__|  \____/      \033[32m#|#|
+|#|#\033[37m               \/                          \/     \/     \/            \/                  \033[32m#|#|
+|#|#                                                                                           #|#|
+|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|
+|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|
+
+    """)   
+
+def InicioParOImpar():
+    print("\n" * 15)
+    print("""
+    \033[32m
+|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|
+|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|
+|#|#                                                                                 #|#|
+|#|#\033[37m      __________                            __                                   \033[32m#|#|
+|#|#\033[37m     #\______   \_____ _______     ____   #|__| _____ ___________ _______        \033[32m#|#|
+|#|#\033[37m      #|     ___/\__  \ \  __ \  #/  _ \  #|  |/     \ \___ \__  \ \  __ \       \033[32m#|#|
+|#|#\033[37m      #|    |     / __ \|  | \/  (  <_> ) #|  |  Y Y  \  |_> > __ \|  | \/       \033[32m#|#|
+|#|#\033[37m      #|____|    (____  /__|     #\____/  #|__|__|_|  /   __(____  /__|          \033[32m#|#|
+|#|#\033[37m                      \/                            \/|__|       \/              \033[32m#|#|
+|#|#                                                                                 #|#| 
+|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|
+|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#| 
+    """)      
 ######################## Reglas de Juegos ########################
 
 def ReglasMayorMenor():
     print("""
-    REGLAS DE MAYOR O MENOR:
-    * En todos los juegos se guarda el mejor puntaje obtenido(Apartado: E - Reportes) *
-                  
-    El sistema genera un número aleatorio inicial entre 1 y 1000.
-    El usuario debe escribir si el siguiente número será 'mayor' o 'menor'.
-    Si aciertas sumas 1 punto.
-    Si te equivocas vuelves a 0 puntos. 
-          
-    Para volver al menú, escriba 'salir'.
+\033[32m
+|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|
+|#|#                                                                                               \033[32m#|#|
+|#|#\033[37m    REGLAS DE MAYOR O MENOR:                                                                   \033[32m#|#|       
+|#|#                                                                                               \033[32m#|#|
+|#|#\033[37m    El sistema genera un número aleatorio inicial entre 1 y 1000.                              \033[32m#|#|
+|#|#\033[37m    Tu debes escribir si el siguiente número será 'mayor' o 'menor'.                           \033[32m#|#|
+|#|#\033[37m    Si \033[32maciertas\033[37m sumas 1 punto.                                                                 \033[32m#|#|           
+|#|#\033[37m    Si te \033[31mequivocas\033[37m vuelves a 0 puntos.                                                        \033[32m#|#|
+|#|#\033[37m    * En todos los juegos se guarda el mejor puntaje obtenido (Apartado: E - Reportes) *       \033[32m#|#|
+|#|#                                                                                               \033[32m#|#|
+|#|#\033[37m    Para volver al menú, escribe 'salir' en cualquier momento.                                 \033[32m#|#|
+|#|#                                                                                               \033[32m#|#|
+|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|\033[0m          
     """)
-    input("Presiona Enter para comenzar a jugar. ")
+    input("\033[33m    Presiona Enter para comenzar a jugar. \033[0m \n")
 
 def ReglasNumeroSecreto():
     print("""
@@ -102,8 +189,9 @@ def JuegoMayorMenor():
     finDeJuego = 1
     
     # Menú del juego y nombre usuario
+    InicioMayorMenor()
     MenuJuegos()
-    opcionmenujuego = input("Seleccione una opción: ").lower()
+    opcionmenujuego = input("\033[33m Seleccione una opción: \033[0m ").lower()
 
     # Opciones del menú del juego
     if (opcionmenujuego == 'a'):
@@ -116,11 +204,13 @@ def JuegoMayorMenor():
 
 
     while(finDeJuego == 0):
+        print("\033[33m\n|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|\n\033[0m")
         if (puntaje == 0):
-            print("Comencemos: ")
-        print(nroAleatorio)
+            print("\n" * 25)
+            print("    Comencemos:")
+        print("\n    Salió el número \033[32m",nroAleatorio)
 
-        eleccion = input("¿Es mayor o menor el siguiente número? ").lower()
+        eleccion = input("\033[0m\n    ¿El siguiente número es\033[33m mayor o menor\033[0m? ").lower()
 
         # Verificación para que coloque solo 'mayor' y 'menor'
         while(eleccion != "mayor" and eleccion != "menor" and eleccion != "salir"):
@@ -131,20 +221,24 @@ def JuegoMayorMenor():
             puntaje = puntaje + 1
             nroAleatorio = nroAleatorioParaaAdivinar
             nroAleatorioParaaAdivinar = random.randint(1,1000)
-            print("¡Bien!")
+            print("\n    ¡Adivinaste!\n")
         elif(eleccion == "menor" and nroAleatorio > nroAleatorioParaaAdivinar):
             puntaje = puntaje + 1
             nroAleatorio = nroAleatorioParaaAdivinar
             nroAleatorioParaaAdivinar = random.randint(1,1000)
-            print("¡Bien!")
+            print("\n    ¡Adivinaste!\n")
         elif(eleccion == "salir"):
             finDeJuego = 1
         else:
-            print("¡Casi! Intenta nuevamente.")
-            print(f"Tu puntaje hasta aquí fué: {puntaje}")
+            print("\n    ¡Casi! Intenta nuevamente.\n")
+            print(f"    Tu puntaje hasta aquí fué: {puntaje}")
             if(puntajeMayorMenor < puntaje):
-                print(f"Superaste tu marca personal anterior, se ha actualizado tu puntaje máximo.")
+                print(f"""
+\n    \033[32m¡FELICITACIONES!                 
+    Superaste tu marca personal anterior, se ha actualizado tu puntaje máximo.\033[0m \n
+""")
                 puntajeMayorMenor = puntaje
+            input("\033[33m    Presiona Enter para comenzar a jugar. \033[0m \n")
             puntaje = 0
 
         # Evitar igualdad en la aleatoriedad del número nuevo y el anterior
@@ -170,6 +264,7 @@ def JuegoNumeroSecreto():
     finDeJuego= 1
     
     # Menú del juego y nombre usuario
+    InicioNumeroSecreto()
     MenuJuegos()
     opcionmenujuego = input("Seleccione una opción: ").lower()
 
@@ -233,6 +328,7 @@ def JuegoParOImpar():
     finDeJuego = 1
 
     # Menú del juego y nombre usuario
+    InicioParOImpar()
     MenuJuegos()
     opcionmenujuego = input("Seleccione una opción: ").lower()
 
@@ -304,16 +400,19 @@ opc = "" # así lo obligo a entrar al mientras y lo convierto en un Repetir
 while (opc!="S"):
 
     MenuGeneral()
-    opc = str(input("Ingrese su opcion: "))
+    
+    opc = str(input("\033[33m    Ingrese su opcion: \033[0m"))
+
 
     # Validación de opción de usuario
     while (opc<"A" or opc>"E" and opc!= "S"):
-        opc = str(input("Ingreso Invalido - reintente "))
-        match opc:
-            case "A": JuegoMayorMenor()
-            case "B": JuegoNumeroSecreto()
-            case "C": JuegoBlackJack()#blackjack
-            case "D": JuegoParOImpar()
-            case "E": cartel()#reporte
-            case "S": print('\n\n GRACIAS POR USAR NUESTRO SISTEMA!!!!')
+        opc = str(input("\033[33m    Ingreso Invalido - reintente:  \033[0m"))
+        
+    match opc:
+        case "A": JuegoMayorMenor()
+        case "B": JuegoNumeroSecreto()
+        case "C": JuegoBlackJack()#blackjack
+        case "D": JuegoParOImpar()
+        case "E": cartel() #reporte
+        case "S": print('\n\n GRACIAS POR USAR NUESTRO SISTEMA!!!!')
 
