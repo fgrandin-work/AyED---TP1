@@ -94,21 +94,19 @@ def ReglasParOImpar():
 ######################## A - Mayor a menor ########################
 
 def JuegoMayorMenor():
-    global nombreUsuarioMyM
+    global nombreUsuarioMayorMenor
     global puntajeMayorMenor
     global vecesJugadoMayorMenor
-
-    nroAleatorio = random.randint(1,1000)
-    nroAleatorioParaaAdivinar = random.randint(1,1000)
 
     puntaje = 0
     finDeJuego = 1
     
     # Menú del juego y nombre usuario
-    nombreUsuarioMyM = input("Ingrese su nombre: ").capitalize()
+    if(nombreUsuarioMayorMenor == ''):
+        nombreUsuarioMayorMenor = input("Ingrese su nombre: ").capitalize()
 
     print(f"""
-    BIENVENIDO {nombreUsuarioMyM}!
+    BIENVENIDO {nombreUsuarioMayorMenor}!
     A - Iniciar juego
     B - Ver reglas
     C - Volver al menu
@@ -132,6 +130,8 @@ def JuegoMayorMenor():
     while(finDeJuego == 0):
         if (puntaje == 0):
             print("Comencemos: ")
+            nroAleatorio = random.randint(1,1000)
+            nroAleatorioParaaAdivinar = random.randint(1,1000)
         print(nroAleatorio)
 
         eleccion = input("¿Es mayor o menor el siguiente número? ").lower()
@@ -171,23 +171,6 @@ def JuegoMayorMenor():
         #print(nroAleatorioParaaAdivinar)
 
 ######################## B - Número secreto ########################
-
-def ValidacionNumeroSecretoRango(nroIngresado):
-    while(nroIngresado < 1 or nroIngresado > 100):
-        print("El número ingresado debe estar entre 1 y 100.")
-        print("Ingrese otro número:")
-        nroIngresado = int(input())
-
-def ValidacionNumeroSecretoTipoDeDato(numeroingresadoValido):
-    while (not numeroingresadoValido):
-        nroIngresado = input("Ingrese un numero: ")
-        try:
-            nroIngresado = int(nroIngresado)
-            numeroingresadoValido = True
-            return nroIngresado
-        except:
-            print("Ingrese un número. Intente nuevamente.")
-    numeroingresadoValido = False
     
 def JuegoNumeroSecreto():
     global nombreUsuarioNumeroSecreto
@@ -195,13 +178,14 @@ def JuegoNumeroSecreto():
     global ganadasNumeroSecreto
     global perdidasNumeroSecreto
     
-    numeroingresadoValido = False
+    numeroingresadoValido = 0
     IntentosRestantes = 4
     nroAleatorio = random.randint(1,100)
     finDeJuego = 1
     
     # Menú del juego y nombre usuario       
-    nombreUsuarioNumeroSecreto = input("Ingrese su nombre: ").capitalize()
+    if(nombreUsuarioNumeroSecreto == ''):
+        nombreUsuarioNumeroSecreto = input("Ingrese su nombre: ").capitalize()
 
     print(f"""
     BIENVENIDO {nombreUsuarioNumeroSecreto}!
@@ -224,39 +208,79 @@ def JuegoNumeroSecreto():
     while(finDeJuego == 0):
 
         # Petición y Validación de Tipo de dato ingresado
-        nroIngresado = ValidacionNumeroSecretoTipoDeDato(numeroingresadoValido)
+        nroIngresado = input("Ingrese un número: ")
+        valido = 0
+        while (valido == 0):
+            try:
+                nroIngresado = int(nroIngresado)
+                valido = 1
+            except ValueError:
+                print(f"Intente nuevamente.")
+                nroIngresado = input("Ingrese un número: ")
+                
         # Validación por rango
-        ValidacionNumeroSecretoRango(nroIngresado)
+        while(nroIngresado < 1 or nroIngresado > 100):
+            print("El número ingresado debe estar entre 1 y 100.")
+            print("Ingrese otro número:")
+            nroIngresado = int(input())
             
         while(nroIngresado != nroAleatorio and IntentosRestantes > 0):
 
             if(nroIngresado > nroAleatorio):
                 print("El número secreto es menor al ingresado.")
+                IntentosRestantes = IntentosRestantes - 1
 
                 # Petición y Validación de Tipo de dato ingresado
-                nroIngresado = ValidacionNumeroSecretoTipoDeDato(numeroingresadoValido)
+                nroIngresado = input("Ingrese un número: ")
+                valido = 0
+                while (valido == 0):
+                    try:
+                        nroIngresado = int(nroIngresado)
+                        valido = 1
+                    except ValueError:
+                        print(f"Intente nuevamente.")
+                        nroIngresado = input("Ingrese un número: ")
+                        
                 # Validación por rango
-                ValidacionNumeroSecretoRango(nroIngresado)
+                while(nroIngresado < 1 or nroIngresado > 100):
+                    print("El número ingresado debe estar entre 1 y 100.")
+                    print("Ingrese otro número:")
+                    nroIngresado = int(input())
 
-            elif (nroIngresado > nroAleatorio):
+            elif (nroIngresado < nroAleatorio):
                 print("El número secreto es mayor al ingresado.")
+                IntentosRestantes = IntentosRestantes - 1
 
                 # Petición y Validación de Tipo de dato ingresado
-                nroIngresado = ValidacionNumeroSecretoTipoDeDato(numeroingresadoValido)
+                nroIngresado = input("Ingrese un número: ")
+                valido = 0
+                while (valido == 0):
+                    try:
+                        nroIngresado = int(nroIngresado)
+                        valido = 1
+                    except ValueError:
+                        print(f"Intente nuevamente.")
+                        nroIngresado = input("Ingrese un número: ")
+                        
                 # Validación por rango
-                ValidacionNumeroSecretoRango(nroIngresado)
+                while(nroIngresado < 1 or nroIngresado > 100):
+                    print("El número ingresado debe estar entre 1 y 100.")
+                    print("Ingrese otro número:")
+                    nroIngresado = int(input())
 
-            IntentosRestantes = IntentosRestantes-1
+            
 
-    # Fín del juego
-    if(nroIngresado == nroAleatorio):
-        vecesJugadoNumeroSecreto += 1
-        ganadasNumeroSecreto += 1
-        print("¡Ganaste! El número secreto era:", nroAleatorio)
-    else:
-        vecesJugadoNumeroSecreto += 1
-        perdidasNumeroSecreto += 1
-        print("¡Perdiste! El número secreto era:", nroAleatorio)
+        # Fín del juego
+        if(nroIngresado == nroAleatorio):
+            vecesJugadoNumeroSecreto += 1
+            ganadasNumeroSecreto += 1
+            finDeJuego = 1
+            print("¡Ganaste! El número secreto era:", nroAleatorio)
+        else:
+            vecesJugadoNumeroSecreto += 1
+            perdidasNumeroSecreto += 1
+            finDeJuego = 1
+            print("¡Perdiste! El número secreto era:", nroAleatorio)
 
 ######################## C - BLACK JACK ########################
 
@@ -281,7 +305,8 @@ def JuegoParOImpar():
     finDeJuego = 1
 
     # Menú del juego y nombre usuario
-    nombreUsuarioParOImpar = input("Ingrese su nombre: ").capitalize()
+    if(nombreUsuarioParOImpar == ''):
+        nombreUsuarioParOImpar = input("Ingrese su nombre: ").capitalize()
 
     print(f"""
     BIENVENIDO {nombreUsuarioParOImpar}!
