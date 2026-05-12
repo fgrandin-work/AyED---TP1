@@ -290,7 +290,7 @@ def JuegoParOImpar():
         suma = dadoA + dadoB
 
         # Input
-        print("""
+        print(""" 
         Los dados se hán tirado.
         Crees que la suma será par o impar?
         """)
