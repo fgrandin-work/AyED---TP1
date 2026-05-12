@@ -170,29 +170,12 @@ def JuegoMayorMenor():
 
 ######################## B - Número secreto ########################
 
-def ValidacionNumeroSecretoRango(nroIngresado):
-    while(nroIngresado < 1 or nroIngresado > 100):
-        print("El número ingresado debe estar entre 1 y 100.")
-        print("Ingrese otro número:")
-        nroIngresado = int(input())
-
-def ValidacionNumeroSecretoTipoDeDato(numeroingresadoValido):
-    while (not numeroingresadoValido):
-        nroIngresado = input("Ingrese un numero: ")
-        try:
-            nroIngresado = int(nroIngresado)
-            numeroingresadoValido = True
-            return nroIngresado
-        except:
-            print("Ingrese un número. Intente nuevamente.")
-    numeroingresadoValido = False
-    
 def JuegoNumeroSecreto():
     global vecesjugadoNS
     global ganadasNumeroSecreto
     global perdidasNumeroSecreto
     
-    numeroingresadoValido = False
+    numeroingresadoValido = 0
     IntentosRestantes = 4
     nroAleatorio = random.randint(1,100)
     finDeJuego = 1
@@ -214,39 +197,79 @@ def JuegoNumeroSecreto():
     while(finDeJuego == 0):
 
         # Petición y Validación de Tipo de dato ingresado
-        nroIngresado = ValidacionNumeroSecretoTipoDeDato(numeroingresadoValido)
+        nroIngresado = input("Ingrese un número: ")
+        valido = 0
+        while (valido == 0):
+            try:
+                nroIngresado = int(nroIngresado)
+                valido = 1
+            except ValueError:
+                print(f"Intente nuevamente.")
+                nroIngresado = input("Ingrese un número: ")
+                
         # Validación por rango
-        ValidacionNumeroSecretoRango(nroIngresado)
+        while(nroIngresado < 1 or nroIngresado > 100):
+            print("El número ingresado debe estar entre 1 y 100.")
+            print("Ingrese otro número:")
+            nroIngresado = int(input())
             
         while(nroIngresado != nroAleatorio and IntentosRestantes > 0):
 
             if(nroIngresado > nroAleatorio):
                 print("El número secreto es menor al ingresado.")
+                IntentosRestantes = IntentosRestantes - 1
 
                 # Petición y Validación de Tipo de dato ingresado
-                nroIngresado = ValidacionNumeroSecretoTipoDeDato(numeroingresadoValido)
+                nroIngresado = input("Ingrese un número: ")
+                valido = 0
+                while (valido == 0):
+                    try:
+                        nroIngresado = int(nroIngresado)
+                        valido = 1
+                    except ValueError:
+                        print(f"Intente nuevamente.")
+                        nroIngresado = input("Ingrese un número: ")
+                        
                 # Validación por rango
-                ValidacionNumeroSecretoRango(nroIngresado)
+                while(nroIngresado < 1 or nroIngresado > 100):
+                    print("El número ingresado debe estar entre 1 y 100.")
+                    print("Ingrese otro número:")
+                    nroIngresado = int(input())
 
-            elif (nroIngresado > nroAleatorio):
+            elif (nroIngresado < nroAleatorio):
                 print("El número secreto es mayor al ingresado.")
+                IntentosRestantes = IntentosRestantes - 1
 
                 # Petición y Validación de Tipo de dato ingresado
-                nroIngresado = ValidacionNumeroSecretoTipoDeDato(numeroingresadoValido)
+                nroIngresado = input("Ingrese un número: ")
+                valido = 0
+                while (valido == 0):
+                    try:
+                        nroIngresado = int(nroIngresado)
+                        valido = 1
+                    except ValueError:
+                        print(f"Intente nuevamente.")
+                        nroIngresado = input("Ingrese un número: ")
+                        
                 # Validación por rango
-                ValidacionNumeroSecretoRango(nroIngresado)
+                while(nroIngresado < 1 or nroIngresado > 100):
+                    print("El número ingresado debe estar entre 1 y 100.")
+                    print("Ingrese otro número:")
+                    nroIngresado = int(input())
 
-            IntentosRestantes = IntentosRestantes-1
+            
 
-    # Fín del juego
-    if(nroIngresado == nroAleatorio):
-        vecesjugadoNS += 1
-        ganadasNumeroSecreto += 1
-        print("¡Ganaste! El número secreto era:", nroAleatorio)
-    else:
-        vecesjugadoNS += 1
-        perdidasNumeroSecreto += 1
-        print("¡Perdiste! El número secreto era:", nroAleatorio)
+        # Fín del juego
+        if(nroIngresado == nroAleatorio):
+            vecesjugadoNS += 1
+            ganadasNumeroSecreto += 1
+            finDeJuego = 1
+            print("¡Ganaste! El número secreto era:", nroAleatorio)
+        else:
+            vecesjugadoNS += 1
+            perdidasNumeroSecreto += 1
+            finDeJuego = 1
+            print("¡Perdiste! El número secreto era:", nroAleatorio)
 
 ######################## C - BLACK JACK ########################
 
