@@ -10,16 +10,18 @@ import random
 
 ######################## Variables de Puntajes Globales ########################
 
-nombredeuser = ''
+nombreUsuarioMayorMenor = ''
+nombreUsuarioNumeroSecreto = ''
+nombreUsuarioParOImpar = ''
 
-vecesjugadoMyM = 0
+vecesJugadoMayorMenor = 0
 puntajeMayorMenor = 0 
 
-vecesjugadoNS = 0
+vecesJugadoNumeroSecreto = 0
 ganadasNumeroSecreto = 0 
 perdidasNumeroSecreto = 0 
 
-vecesjugadoPoI = 0
+vecesJugadoParOImpar = 0
 ganadasParOImpar = 0 
 perdidasParOImpar = 0 
 
@@ -38,16 +40,7 @@ def MenuGeneral():
     S - Salir del programa
     """)
 
-def MenuJuegos():
-    global nombredeuser 
-    nombredeuser = input("Ingrese su nombre: ").capitalize()
 
-    print(f"""
-    BIENVENIDO {nombredeuser}!
-    A - Iniciar juego
-    B - Ver reglas
-    C - Volver al menu
-    """)
     
 ######################## Reglas de Juegos ########################
 
@@ -101,17 +94,24 @@ def ReglasParOImpar():
 ######################## A - Mayor a menor ########################
 
 def JuegoMayorMenor():
+    global nombreUsuarioMayorMenor
     global puntajeMayorMenor
-    global vecesjugadoMyM
-
-    nroAleatorio = random.randint(1,1000)
-    nroAleatorioParaaAdivinar = random.randint(1,1000)
+    global vecesJugadoMayorMenor
 
     puntaje = 0
     finDeJuego = 1
     
     # Menú del juego y nombre usuario
-    MenuJuegos()
+    if(nombreUsuarioMayorMenor == ''):
+        nombreUsuarioMayorMenor = input("Ingrese su nombre: ").capitalize()
+
+    print(f"""
+    BIENVENIDO {nombreUsuarioMayorMenor}!
+    A - Iniciar juego
+    B - Ver reglas
+    C - Volver al menu
+    """)
+
     opcionmenujuego = input("Seleccione una opción: ").lower()
 
     # Opciones del menú del juego
@@ -130,6 +130,8 @@ def JuegoMayorMenor():
     while(finDeJuego == 0):
         if (puntaje == 0):
             print("Comencemos: ")
+            nroAleatorio = random.randint(1,1000)
+            nroAleatorioParaaAdivinar = random.randint(1,1000)
         print(nroAleatorio)
 
         eleccion = input("¿Es mayor o menor el siguiente número? ").lower()
@@ -158,7 +160,7 @@ def JuegoMayorMenor():
                 print(f"Superaste tu marca personal anterior, se ha actualizado tu puntaje máximo.")
                 puntajeMayorMenor = puntaje
             puntaje = 0
-            vecesjugadoMyM += 1
+            vecesJugadoMayorMenor += 1
 
         # Evitar igualdad en la aleatoriedad del número nuevo y el anterior
         while(nroAleatorioParaaAdivinar == nroAleatorio):
@@ -169,9 +171,10 @@ def JuegoMayorMenor():
         #print(nroAleatorioParaaAdivinar)
 
 ######################## B - Número secreto ########################
-
+    
 def JuegoNumeroSecreto():
-    global vecesjugadoNS
+    global nombreUsuarioNumeroSecreto
+    global vecesJugadoNumeroSecreto
     global ganadasNumeroSecreto
     global perdidasNumeroSecreto
     
@@ -180,8 +183,16 @@ def JuegoNumeroSecreto():
     nroAleatorio = random.randint(1,100)
     finDeJuego = 1
     
-    # Menú del juego y nombre usuario
-    MenuJuegos()
+    # Menú del juego y nombre usuario       
+    if(nombreUsuarioNumeroSecreto == ''):
+        nombreUsuarioNumeroSecreto = input("Ingrese su nombre: ").capitalize()
+
+    print(f"""
+    BIENVENIDO {nombreUsuarioNumeroSecreto}!
+    A - Iniciar juego
+    B - Ver reglas
+    C - Volver al menu
+    """)
     opcionmenujuego = input("Seleccione una opción: ").lower()
 
     # Opciones del menú del juego
@@ -261,12 +272,12 @@ def JuegoNumeroSecreto():
 
         # Fín del juego
         if(nroIngresado == nroAleatorio):
-            vecesjugadoNS += 1
+            vecesJugadoNumeroSecreto += 1
             ganadasNumeroSecreto += 1
             finDeJuego = 1
             print("¡Ganaste! El número secreto era:", nroAleatorio)
         else:
-            vecesjugadoNS += 1
+            vecesJugadoNumeroSecreto += 1
             perdidasNumeroSecreto += 1
             finDeJuego = 1
             print("¡Perdiste! El número secreto era:", nroAleatorio)
@@ -286,14 +297,23 @@ def JuegoBlackJack():
 ######################## D - Par o impar ########################
 
 def JuegoParOImpar():
+    global nombreUsuarioParOImpar
     global ganadasParOImpar
     global perdidasParOImpar
-    global vecesjugadoPoI
+    global vecesJugadoParOImpar
     
     finDeJuego = 1
 
     # Menú del juego y nombre usuario
-    MenuJuegos()
+    if(nombreUsuarioParOImpar == ''):
+        nombreUsuarioParOImpar = input("Ingrese su nombre: ").capitalize()
+
+    print(f"""
+    BIENVENIDO {nombreUsuarioParOImpar}!
+    A - Iniciar juego
+    B - Ver reglas
+    C - Volver al menu
+    """)
     opcionmenujuego = input("Seleccione una opción: ").lower()
 
     # Opciones del menú del juego
@@ -330,13 +350,13 @@ def JuegoParOImpar():
         # Comparación de respuesta del usuario y los dados
         if (suma % 2 == 0 and respuesta == 'par' or suma % 2 != 0 and respuesta == 'impar'):
             ganadasParOImpar += 1
-            vecesjugadoPoI += 1
+            vecesJugadoParOImpar += 1
             print(f"Acertaste! Los números fueron {dadoA} y {dadoB}, y suman {suma}.")
         elif (respuesta == 'salir'):
             finDeJuego = 1
         else:
             print(f"Te equivocaste! Los números fueron {dadoA} y {dadoB}, y suman {suma}.")
-            vecesjugadoPoI += 1
+            vecesJugadoParOImpar += 1
             perdidasParOImpar += 1
 
 ######################## REPORTES ########################
@@ -345,33 +365,40 @@ def Reportes():
 
     finDeJuego = 0
 
-    # Globales 
-    global nombredeuser 
     # Mayor y Menor
-    global vecesjugadoMyM
+    global nombreUsuarioMayorMenor
+    global vecesJugadoMayorMenor
     global puntajeMayorMenor 
     # Numero Secreto
-    global vecesjugadoNS
+    global nombreUsuarioNumeroSecreto
+    global vecesJugadoNumeroSecreto
     global ganadasNumeroSecreto 
     global perdidasNumeroSecreto 
     # Par o Impar
-    global vecesjugadoPoI
+    global nombreUsuarioParOImpar
+    global vecesJugadoParOImpar
     global ganadasParOImpar 
     global perdidasParOImpar 
 
     print(f"""
     REPORTES:
-    Nombre de usuario : {nombredeuser}
+        
+    Mayor y Menor:
+        Nombre de usuario : {nombreUsuarioMayorMenor}
+        Cantidad de veces jugadas: {vecesJugadoMayorMenor}
+        Mejor puntaje: {puntajeMayorMenor}
 
-    Cantidad de veces jugadas:
-        Mayor y menor: {vecesjugadoMyM}
-            Mejor puntaje en Mayor y Menor: {puntajeMayorMenor}
-        Número Secreto: {vecesjugadoNS}
-            Cantidad de ganadas: {ganadasNumeroSecreto}
-            Cantidad de perdidas: {perdidasNumeroSecreto}
-        Par o Impar: {vecesjugadoPoI}
-            Cantidad de ganadas: {ganadasParOImpar}
-            Cantidad de perdidas: {perdidasParOImpar}
+    Número secreto:
+        Nombre de usuario : {nombreUsuarioNumeroSecreto}
+        Cantidad de veces jugadas: {vecesJugadoNumeroSecreto}        
+        Cantidad de ganadas: {ganadasNumeroSecreto}
+        Cantidad de perdidas: {perdidasNumeroSecreto}
+            
+    Par o Impar:
+        Nombre de usuario : {nombreUsuarioParOImpar}
+        Cantidad de veces jugadas: {vecesJugadoParOImpar}
+        Cantidad de ganadas: {ganadasParOImpar}
+        Cantidad de perdidas: {perdidasParOImpar}
 
     """)
     input("Presiona enter para volver al menu principal.")
@@ -379,7 +406,6 @@ def Reportes():
 ######################## Testing de partes individualmente ########################
 
 # MenuGeneral()
-# MenuJuegos()
 
 # JuegoMayorMenor()
 # JuegoNumeroSecreto()
