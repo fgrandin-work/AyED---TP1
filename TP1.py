@@ -279,6 +279,9 @@ def JuegoNumeroSecreto():
     C - Volver al menu
     """)
     opcionmenujuego = input("\033[33m Seleccione una opción: \033[0m ").lower()
+    while(opcionmenujuego<"a" or opcionmenujuego>"c"):
+        print("Ingrese una opción válida.")
+        opcionmenujuego = input("Seleccione una opción: ").lower()
 
     # Opciones del menú del juego
     if (opcionmenujuego == 'a'):
@@ -288,8 +291,8 @@ def JuegoNumeroSecreto():
         finDeJuego = 0
     elif(opcionmenujuego == 'c'):
         finDeJuego = 1  
-    else:
-        print("\033[33mIngrese una opción válida.\033[0m ")
+    
+        
 
     while(finDeJuego == 0):
 
@@ -313,49 +316,33 @@ def JuegoNumeroSecreto():
             nroIngresado = int(input())
             
         while(nroIngresado != nroAleatorio and IntentosRestantes > 0):
-
+            
             if(nroIngresado > nroAleatorio):
-                print("El número secreto es \033[33mmenor\033[0m al ingresado.")
-                IntentosRestantes = IntentosRestantes - 1
-
-                # Petición y Validación de Tipo de dato ingresado
-                nroIngresado = input("\033[33mIngrese un número: \033[0m")
-                valido = 0
-                while (valido == 0):
-                    try:
-                        nroIngresado = int(nroIngresado)
-                        valido = 1
-                    except ValueError:
-                        print(f"Intente nuevamente.")
-                        nroIngresado = input("\033[33mIngrese un número: \033[0m")
-                        
-                # Validación por rango
-                while(nroIngresado < 1 or nroIngresado > 100):
-                    print("El número ingresado debe estar entre 1 y 100.")
-                    print("\033[33mIngrese otro número:\033[0m")
-                    nroIngresado = int(input())
+                print("El número secreto es menor al ingresado.")
 
             elif (nroIngresado < nroAleatorio):
+                print("El número secreto es mayor al ingresado.")
+
+            IntentosRestantes = IntentosRestantes - 1
                 print("El número secreto es \033[33mmayor\033[0m al ingresado.")
                 IntentosRestantes = IntentosRestantes - 1
 
-                # Petición y Validación de Tipo de dato ingresado
-                nroIngresado = input("\033[33mIngrese un número: \033[0m")
-                valido = 0
-                while (valido == 0):
-                    try:
-                        nroIngresado = int(nroIngresado)
-                        valido = 1
-                    except ValueError:
-                        print(f"Intente nuevamente.")
-                        nroIngresado = input("\033[33mIngrese un número: \033[0m")
+            # Petición y Validación de Tipo de dato ingresado
+            nroIngresado = input("\033[33mIngrese un número: \033[0m")
+            valido = 0
+            while (valido == 0):
+                try:
+                    nroIngresado = int(nroIngresado)
+                    valido = 1
+                except ValueError:
+                    print(f"Intente nuevamente.")
+                    nroIngresado = input("\033[33mIngrese un número: \033[0m")
                         
-                # Validación por rango
-                while(nroIngresado < 1 or nroIngresado > 100):
-                    print("El número ingresado debe estar entre 1 y 100.")
-                    print("\033[33mIngrese otro número:\033[0m")
-                    nroIngresado = int(input())
-
+            # Validación por rango
+            while(nroIngresado < 1 or nroIngresado > 100):
+                print("El número ingresado debe estar entre 1 y 100.")
+                print("\033[33mIngrese otro número:\033[0m")
+                nroIngresado = int(input())
             
 
         # Fín del juego
@@ -369,6 +356,23 @@ def JuegoNumeroSecreto():
             perdidasNumeroSecreto += 1
             finDeJuego = 1
             print("\033[31m¡Perdiste!\033[0m El número secreto era:", nroAleatorio)
+
+        print("""
+            A - Seguir jugando
+            B - Salir a menú principal
+        """)
+        opcionmenujuego = input("Ingrese una opción").lower()
+        while(opcionmenujuego<"a" or opcionmenujuego>"b"):
+            print("Ingrese una opción válida.")
+            opcionmenujuego = input("Seleccione una opción: ").lower()
+
+        if (opcionmenujuego == 'a'):
+            IntentosRestantes = 4
+            nroAleatorio = random.randint(1,100)
+            finDeJuego= 0
+        elif(opcionmenujuego == 'b'):
+            finDeJuego = 1
+
 
 ######################## C - BLACK JACK ########################
 
