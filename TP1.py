@@ -1,4 +1,5 @@
 import random
+import os
 
 ######################## Variables de Puntajes Globales ########################
 
@@ -18,14 +19,10 @@ perdidasParOImpar = 0
 ######################## Menús #####################################
 
 def MenuGeneral():
-    print("\n" * 15)
+    os.system('cls' if os.name == 'nt' else 'clear')
+
     print("""
 \033[32m 
-          
-
-
-
-
 |#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|
 |#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|
 |#|#                                                                                 #|#|
@@ -52,9 +49,8 @@ def MenuGeneral():
     """)
 
 def MenuJuegos():
-    print("\n" * 5)
     nombreUser = input("\033[33m    Ingrese su nombre: \033[0m").capitalize()
-    print("\n" * 20)
+    os.system('cls' if os.name == 'nt' else 'clear')
     print(f"""          
            \033[32m¡BIENVENIDO {nombreUser}!\033[0m         
 
@@ -70,7 +66,7 @@ def MenuJuegos():
     
 
 def InicioMayorMenor():
-    print("\n" * 15)
+    os.system('cls' if os.name == 'nt' else 'clear')
     print("""
 \033[32m          
 |#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#||#|#||#|#||#|#||#|#|#|#|
@@ -88,7 +84,7 @@ def InicioMayorMenor():
     """)
 
 def InicioNumeroSecreto():
-    print("\n" * 15)
+    os.system('cls' if os.name == 'nt' else 'clear')
     print("""
     \033[32m
 |#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|
@@ -107,7 +103,7 @@ def InicioNumeroSecreto():
     """)   
 
 def InicioParOImpar():
-    print("\n" * 15)
+    os.system('cls' if os.name == 'nt' else 'clear')
     print("""
     \033[32m
 |#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|
@@ -206,7 +202,7 @@ def JuegoMayorMenor():
     while(finDeJuego == 0):
         print("\033[33m\n|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|\n\033[0m")
         if (puntaje == 0):
-            print("\n" * 25)
+            os.system('cls' if os.name == 'nt' else 'clear')
             print("    Comencemos:")
         print("\n    Salió el número \033[32m",nroAleatorio)
 
