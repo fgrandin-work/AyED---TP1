@@ -28,18 +28,18 @@ def MenuGeneral():
 |#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|
 |#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|
 |#|#                                                                                 #|#|
-|#|#\033[37m        __                 __          /\     ___                 __           \033[32m  #|#|
+|#|#\033[37m        __                 __          /\\      ___                 __          \033[32m  #|#|
 |#|#\033[37m      #|  |  __ __   ____ |  | __   #_(__)/ #|   |   ____   ____ |__| ____     \033[32m  #|#|
-|#|#\033[37m      #|  | |  |  \_/ ___\|  |/ /  #/    \  #|   |  /  _ \ / ___\|  |/ ___\    \033[32m  #|#|
-|#|#\033[37m      #|  |_|  |  /\  \___|    <  #|   |  \ #|   |_(  <_> ) /_/  >  \  \___    \033[32m  #|#|
-|#|#\033[37m      #|____/____/  \___  >__|_ \ #|___|  / #|____/\____/\___  / |__|\___  >   \033[32m  #|#|
-|#|#\033[37m                        \/     \/       \/              /_____/          \/    \033[32m  #|#|
+|#|#\033[37m      #|  | |  |  \\_/ ___\\|  |/ /  #/    \\  #|   |  /  _ \\ / ___\\|  |/ ___\\    \033[32m  #|#|
+|#|#\033[37m      #|  |_|  |  /\\  \\___|    <  #|   |  \\ #|   |_(  <_> ) /_/  >  \\  \\___    \033[32m  #|#|
+|#|#\033[37m      #|____/____/  \\___  >__|_ \\ #|___|  / #|____/\\____/\\___  / |__|\\___  >   \033[32m  #|#|
+|#|#\033[37m                        \\/     \\/       \\/              /_____/          \\/    \033[32m  #|#|
 |#|#                                                                                 #|#|
 |#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|
 |#|#|                                                                               |#|#|
 |#|#|                              ¡Bienvenido!                                     |#|#|
 |#|#|                               ¯¯¯¯¯¯¯¯¯¯                                      |#|#|
-|#|#|    \033[37m Selecciona el juego colocando su letra correspondiente(Ej: A):\033[32m            |#|#|
+|#|#|    \033[37m Selecciona el juego colocando su letra correspondiente (Ej: A):\033[32m           |#|#|
 |#|#|    \033[37m A - Juego del menor-mayor                                     \033[32m            |#|#|
 |#|#|    \033[37m B - Adivinar el número secreto                                \033[32m            |#|#|
 |#|#|    \033[37m C - BlackJack                                                 \033[32m            |#|#|
@@ -58,11 +58,11 @@ def InicioMayorMenor():
 |#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#||#|#||#|#||#|#||#|#|#|#| 
 |#|#                                                                                                         #|#|
 |#|#\033[37m       _    _                                                                            _________      \033[32m #|#|
-|#|#\033[37m     #| \  / \  _____  ___.__. ___________     ____      _____   ____   ____   __________\_____   \     \033[32m #|#|
-|#|#\033[37m     #|  \/   \ \__ \ <   |  |/  _ \_  __ \  #/  _ \   #/     \_/ __ \ /    \ /  _ \_  __ \ /   __/      \033[32m#|#| 
-|#|#\033[37m     #|  /\    \ / __\.\___  (  <_> )  | \/  (  <_> ) #|  Y Y  \  ___/|   |  (  <_> )  | \/|   |         \033[32m#|#| 
-|#|#\033[37m     #|_|  |_   (____  / ____|\____/|__|     #\____/  #|__|_|  /\___  >___|  /\____/|__|   |___|         \033[32m#|#| 
-|#|#\033[37m             \/      \/\/                                    \/     \/     \/              <___>         \033[32m#|#| 
+|#|#\033[37m     #| \\  / \\  _____  ___.__. ___________     ____      _____   ____   ____   __________\\_____   \\     \033[32m #|#|
+|#|#\033[37m     #|  \\/   \\ \\__ \\ <   |  |/  _ \\_  __ \\  #/  _ \\   #/     \\_/ __ \\ /    \\ /  _ \\_  __ \\ /   __/      \033[32m#|#| 
+|#|#\033[37m     #|  /\\    \\ / __\\.\\___  (  <_> )  | \\/  (  <_> ) #|  Y Y  \\  ___/|   |  (  <_> )  | \\/|   |         \033[32m#|#| 
+|#|#\033[37m     #|_|  |_   (____  / ____|\\____/|__|     #\\____/  #|__|_|  /\\___  >___|  /\\____/|__|   |___|         \033[32m#|#| 
+|#|#\033[37m             \\/      \\/\\/                                    \\/     \\/     \\/              <___>         \033[32m#|#| 
 |#|#                                                                                                         #|#| 
 |#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#||#|#||#|#||#|#||#|#|#|#| 
 |#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#||#|#||#|#||#|#||#|#|#|#| 
@@ -76,11 +76,11 @@ def InicioNumeroSecreto():
 |#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|
 |#|#                                                                                           #|#|
 |#|#\033[37m       ____   __                     _________                            __               \033[32m#|#|
-|#|#\033[37m      #\   \ \  | _____  ____      #/   _____/ ____   ___________   _____/  |_  ____       \033[32m#|#|
-|#|#\033[37m      #/ |\ \ | ||  __ \/  _ \     #\_____  \_/ __ \_/ ___\_  __ \_/ __ \   __\/  _ \      \033[32m#|#|
-|#|#\033[37m     #/  | \ \| ||  | \(  <_> )    #/        \  ___/\  \___|  | \/\  ___/|  | (  <_> )     \033[32m#|#|
-|#|#\033[37m     #\__|  \__  /__|   \____/ *  #/_______  /\___  >\___  >__|    \___  >__|  \____/      \033[32m#|#|
-|#|#\033[37m               \/                          \/     \/     \/            \/                  \033[32m#|#|
+|#|#\033[37m      #\\   \\ \\  | _____  ____      #/   _____/ ____   ___________   _____/  |_  ____       \033[32m#|#|
+|#|#\033[37m      #/ |\\ \\ | ||  __ \\/  _ \\     #\\_____  \\_/ __ \\_/ ___\\_  __ \\_/ __ \\   __\\/  _ \\      \033[32m#|#|
+|#|#\033[37m     #/  | \\ \\| ||  | \\(  <_> )    #/        \\  ___/\\  \\___|  | \\/\\  ___/|  | (  <_> )     \033[32m#|#|
+|#|#\033[37m     #\\__|  \\__  /__|   \\____/ *  #/_______  /\\___  >\\___  >__|    \\___  >__|  \\____/      \033[32m#|#|
+|#|#\033[37m               \\/                          \\/     \\/     \\/            \\/                  \033[32m#|#|
 |#|#                                                                                           #|#|
 |#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|
 |#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|
@@ -95,11 +95,11 @@ def InicioParOImpar():
 |#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|
 |#|#                                                                                 #|#|
 |#|#\033[37m      __________                            __                                   \033[32m#|#|
-|#|#\033[37m     #\______   \_____ _______     ____   #|__| _____ ___________ _______        \033[32m#|#|
-|#|#\033[37m      #|     ___/\__  \ \  __ \  #/  _ \  #|  |/     \ \___ \__  \ \  __ \       \033[32m#|#|
-|#|#\033[37m      #|    |     / __ \|  | \/  (  <_> ) #|  |  Y Y  \  |_> > __ \|  | \/       \033[32m#|#|
-|#|#\033[37m      #|____|    (____  /__|     #\____/  #|__|__|_|  /   __(____  /__|          \033[32m#|#|
-|#|#\033[37m                      \/                            \/|__|       \/              \033[32m#|#|
+|#|#\033[37m     #\\______   \\_____ _______     ____   #|__| _____ ___________ _______        \033[32m#|#|
+|#|#\033[37m      #|     ___/\\__  \\ \\  __ \\  #/  _ \\  #|  |/     \\ \\___ \\__  \\ \\  __ \\       \033[32m#|#|
+|#|#\033[37m      #|    |     / __ \\|  | \\/  (  <_> ) #|  |  Y Y  \\  |_> > __ \\|  | \\/       \033[32m#|#|
+|#|#\033[37m      #|____|    (____  /__|     #\\____/  #|__|__|_|  /   __(____  /__|          \033[32m#|#|
+|#|#\033[37m                      \\/                            \\/|__|       \\/              \033[32m#|#|
 |#|#                                                                                 #|#| 
 |#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|
 |#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#| 
@@ -147,7 +147,7 @@ def ReglasNumeroSecreto():
     input("\033[33m    Presiona Enter para comenzar a jugar. \033[0m \n")
 
 def ReglasParOImpar():
-    print("""
+    print("""\033[32m
 |#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|                  
 |#|#\033[37m                                                                                                         \033[32m#|#|
 |#|#\033[37m    REGLAS DE PAR O IMPAR:                                                                               \033[32m#|#|
@@ -165,7 +165,7 @@ def ReglasParOImpar():
     """)
     input("\033[33m    Presiona Enter para comenzar a jugar. \033[0m \n")
 
-
+ 
 ######################## JUEGOS ########################
 
 ######################## A - Mayor a menor ########################
@@ -298,7 +298,8 @@ def JuegoNumeroSecreto():
 
         os.system('cls' if os.name == 'nt' else 'clear')
 
-        # Petición y Validación de Tipo de dato ingresado
+        print("\033[33m\n|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|\n\033[0m")
+        # Petición y Validación de Tipo de dato ingresado        
         nroIngresado = input("\033[33mIngrese un número: \033[0m")
         valido = 0
         while (valido == 0):
@@ -318,14 +319,12 @@ def JuegoNumeroSecreto():
         while(nroIngresado != nroAleatorio and IntentosRestantes > 0):
             
             if(nroIngresado > nroAleatorio):
-                print("El número secreto es menor al ingresado.")
+                print("El número secreto es menor al ingresado.\n")
 
             elif (nroIngresado < nroAleatorio):
-                print("El número secreto es mayor al ingresado.")
+                print("El número secreto es mayor al ingresado.\n")
 
             IntentosRestantes = IntentosRestantes - 1
-                print("El número secreto es \033[33mmayor\033[0m al ingresado.")
-                IntentosRestantes = IntentosRestantes - 1
 
             # Petición y Validación de Tipo de dato ingresado
             nroIngresado = input("\033[33mIngrese un número: \033[0m")
@@ -350,21 +349,22 @@ def JuegoNumeroSecreto():
             vecesJugadoNumeroSecreto += 1
             ganadasNumeroSecreto += 1
             finDeJuego = 1
-            print("\033[32m¡Ganaste!\033[0m El número secreto era:", nroAleatorio)
+            print("\n\033[32m¡Ganaste!\033[0m El número secreto era:", nroAleatorio)
         else:
             vecesJugadoNumeroSecreto += 1
             perdidasNumeroSecreto += 1
             finDeJuego = 1
-            print("\033[31m¡Perdiste!\033[0m El número secreto era:", nroAleatorio)
+            print("\n\033[31m¡Perdiste!\033[0m El número secreto era:", nroAleatorio)
 
         print("""
-            A - Seguir jugando
-            B - Salir a menú principal
+\033[33m\n|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|\n\033[0m
+        A - Seguir jugando
+        B - Salir a menú principal
         """)
-        opcionmenujuego = input("Ingrese una opción").lower()
+        opcionmenujuego = input("\033[33mSeleccione una opción: \033[0m").lower()
         while(opcionmenujuego<"a" or opcionmenujuego>"b"):
             print("Ingrese una opción válida.")
-            opcionmenujuego = input("Seleccione una opción: ").lower()
+            opcionmenujuego = input("\033[33mSeleccione una opción: \033[0m").lower()
 
         if (opcionmenujuego == 'a'):
             IntentosRestantes = 4
@@ -384,6 +384,7 @@ def EnConstruccion():
     input("Presiona Enter para volver al menú principal.")
     
 def JuegoBlackJack():
+    os.system('cls' if os.name == 'nt' else 'clear')
     return EnConstruccion()
 
 ######################## D - Par o impar ########################
@@ -420,38 +421,40 @@ def JuegoParOImpar():
     else:
         print("Ingrese una opción válida.")
     
+    os.system('cls' if os.name == 'nt' else 'clear')
+
     while (finDeJuego == 0):
         dadoA = random.randint(1, 6)
         dadoB = random.randint(1, 6)
         suma = dadoA + dadoB
 
         # Input
-        print(""" 
-        Los dados se hán tirado.
-        Crees que la suma será par o impar?
+        print("""
+\033[33m\n|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|\n\033[0m 
+Los dados se hán tirado.
+Crees que la suma será \033[33mpar o impar\033[0m?\n
         """)
-        respuesta = input("Respuesta: ").lower()
+        respuesta = input("\033[33mRespuesta: \033[0m").lower()
 
         # Verificación de respuesta (par, impar o salir)
         while (respuesta != 'par' and respuesta != 'impar' and respuesta != 'salir'):
-            print("""
-            Respuesta incorrecta. Intente nuevamente.
-            * Recuerda que solo se permite introducir 'par' o 'impar'(Para salir coloque 'salir').
+            print("""\n
+Respuesta incorrecta. Intente nuevamente.
+* Recuerda que solo se permite introducir 'par' o 'impar'(Para salir coloque 'salir').
             """)
-            respuesta = input("Respuesta: ").lower()
+            respuesta = input("\033[33mRespuesta: \033[0m").lower()
     
         # Comparación de respuesta del usuario y los dados
         if (suma % 2 == 0 and respuesta == 'par' or suma % 2 != 0 and respuesta == 'impar'):
             ganadasParOImpar += 1
             vecesJugadoParOImpar += 1
-            print(f"Acertaste! Los números fueron {dadoA} y {dadoB}, y suman {suma}.")
+            print(f"\n\033[32m¡Acertaste!\033[0m Los números fueron {dadoA} y {dadoB}, y suman {suma}.")
         elif (respuesta == 'salir'):
             finDeJuego = 1
         else:
-            print(f"Te equivocaste! Los números fueron {dadoA} y {dadoB}, y suman {suma}.")
+            print(f"\n\033[31m¡Te equivocaste!\033[0m Los números fueron {dadoA} y {dadoB}, y suman {suma}.")
             vecesJugadoParOImpar += 1
             perdidasParOImpar += 1
-
 ######################## REPORTES ########################
 
 def Reportes():
@@ -473,28 +476,37 @@ def Reportes():
     global ganadasParOImpar 
     global perdidasParOImpar 
 
-    print(f"""
-    REPORTES:
-        
-    Mayor y Menor:
+    print(f""" \033[32m
+|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|
+|#|#                                                             #|#|
+|#|#                           REPORTES                          #|#|
+|#|#                                                             #|#|
+\033[32m|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|
+                           
+    Mayor y Menor:\033[0m
         Nombre de usuario : {nombreUsuarioMayorMenor}
         Cantidad de veces jugadas: {vecesJugadoMayorMenor}
-        Mejor puntaje: {puntajeMayorMenor}
+        \033[32mMejor puntaje:\033[0m {puntajeMayorMenor}
 
-    Número secreto:
+\033[32m|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|
+
+    Número secreto:\033[0m
         Nombre de usuario : {nombreUsuarioNumeroSecreto}
         Cantidad de veces jugadas: {vecesJugadoNumeroSecreto}        
-        Cantidad de ganadas: {ganadasNumeroSecreto}
-        Cantidad de perdidas: {perdidasNumeroSecreto}
-            
-    Par o Impar:
+        Cantidad de \033[32mganadas:\033[0m {ganadasNumeroSecreto}
+        Cantidad de \033[31mperdidas:\033[0m {perdidasNumeroSecreto}
+
+\033[32m|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|\033[
+
+    Par o Impar:\033[0m
         Nombre de usuario : {nombreUsuarioParOImpar}
         Cantidad de veces jugadas: {vecesJugadoParOImpar}
-        Cantidad de ganadas: {ganadasParOImpar}
-        Cantidad de perdidas: {perdidasParOImpar}
+        Cantidad de \033[32mganadas:\033[0m {ganadasParOImpar}
+        Cantidad de \033[31mperdidas:\033[0m {perdidasParOImpar}
 
+\033[32m|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|\033[0m
     """)
-    input("Presiona enter para volver al menu principal.")
+    input("\033[33mPresiona enter para volver al menu principal.\033[0m")
 
 ######################## Testing de partes individualmente ########################
 
@@ -533,3 +545,4 @@ while (opc!="s"):
 
             
 
+# 
