@@ -50,23 +50,6 @@ def MenuGeneral():
 |#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|
     """)
 
-def MenuJuegos():
-    nombreUser = input("\033[33m    Ingrese su nombre: \033[0m").capitalize()
-    os.system('cls' if os.name == 'nt' else 'clear')
-    print(f"""          
-           \033[32m¡BIENVENIDO {nombreUser}!\033[0m         
-
-\033[32m 
-|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|
-|#|#                                     #|#|
-|#|#\033[37m         A - Iniciar juego           \033[32m#|#|
-|#|#\033[37m         B - Ver reglas              \033[32m#|#|
-|#|#\033[37m         C - Volver al menu          \033[32m#|#|
-|#|#                                     #|#|
-|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|\033[0m 
-    """)
-    
-
 def InicioMayorMenor():
     os.system('cls' if os.name == 'nt' else 'clear')
     print("""
@@ -143,34 +126,44 @@ def ReglasMayorMenor():
     input("\033[33m    Presiona Enter para comenzar a jugar. \033[0m \n")
 
 def ReglasNumeroSecreto():
-    print("""
-    REGLAS DE NÚMERO SECRETO:
-    * En todos los juegos se guarda el mejor puntaje obtenido(Apartado: E - Reportes) *
-                  
-    La computadora piensa un número entre 1 y 100. 
-    En cada intento fallido, el sistema debe indicar si el número secreto es mayor o menor al que vos ingresaste.
-    Tendrás 4 intentos para adivinarlo.
-          
-    Pierdes si se te agotan los intentos.
-    Si aciertas antes de agotarlos, ¡GANAS!
-          
-    Para volver al menú, escriba 'salir'.
+    print("""\033[32m
+|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|
+|#|#\033[37m                                                                                                                     \033[32m#|#|
+|#|#\033[37m    REGLAS DE NÚMERO SECRETO:                                                                                        \033[32m#|#|
+|#|#\033[37m                                                                                                                     \033[32m#|#|
+|#|#\033[37m    La computadora piensa un número entre 1 y 100.                                                                   \033[32m#|#|
+|#|#\033[37m    Tu deberás ingresar otro numero entre 1 y 100 intentando adivinar el generado por la máquina.                    \033[32m#|#|
+|#|#\033[37m    En cada intento fallido, el sistema debe indicar si el número secreto es mayor o menor al que vos ingresaste.    \033[32m#|#|
+|#|#\033[37m    Tendrás 5 intentos para adivinarlo.                                                                              \033[32m#|#|
+|#|#                                                                                                                     \033[32m#|#|
+|#|#\033[31m    Pierdes\033[37m si se te agotan los intentos.                                                                            \033[32m#|#|
+|#|#\033[37m    Si aciertas antes de agotarlos,\033[32m ¡GANAS! \033[37m                                                                         \033[32m#|#|
+|#|#\033[37m    * En todos los juegos se guarda el mejor puntaje obtenido (Apartado: E - Reportes) *                             \033[32m#|#|
+|#|#                                                                                                                     \033[32m#|#|
+|#|#\033[37m    Para volver al menú, escriba 'salir'.                                                                            \033[32m#|#|
+|#|#                                                                                                                     \033[32m#|#|
+|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|\033[0m
     """)
-    input("Presiona Enter para comenzar a jugar. ")
+    input("\033[33m    Presiona Enter para comenzar a jugar. \033[0m \n")
 
 def ReglasParOImpar():
     print("""
-    REGLAS DE PAR O IMPAR:
-    * En todos los juegos se guarda el mejor puntaje obtenido(Apartado: E - Reportes) *
-          
-    El programa tira 2 dados y suma ambos resultados(Dado de 6 caras: 1 al 6).
-    Sin ver los resultados de los dados deberás indicar si la suma de los números es par o impar. 
-    Si aciertas sumas 1 punto.
-    Si pierdes vuelves a 0 puntos.
-        
-    Para volver al menú, escriba 'salir'.
+|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|                  
+|#|#\033[37m                                                                                                         \033[32m#|#|
+|#|#\033[37m    REGLAS DE PAR O IMPAR:                                                                               \033[32m#|#|
+|#|#\033[37m                                                                                                         \033[32m#|#|          
+|#|#\033[37m    El programa tira 2 dados y suma ambos resultados (Dado de 6 caras: 1 al 6).                          \033[32m#|#|
+|#|#\033[37m    Sin ver los resultados de los dados deberás indicar si la suma de los números es par o impar.        \033[32m#|#|
+|#|#\033[37m                                                                                                         \033[32m#|#|          
+|#|#\033[37m    Si \033[32maciertas\033[37m sumas 1 punto.                                                                           \033[32m#|#|
+|#|#\033[37m    Si \033[31mte equivocas\033[37m vuelves a 0 puntos.                                                                  \033[32m#|#|
+|#|#\033[37m    * En todos los juegos se guarda el mejor puntaje obtenido(Apartado: E - Reportes) *                  \033[32m#|#|
+|#|#\033[37m                                                                                                         \033[32m#|#|        
+|#|#\033[37m    Para volver al menú, escriba 'salir'.                                                                \033[32m#|#|
+|#|#\033[37m                                                                                                         \033[32m#|#|          
+|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|          
     """)
-    input("Presiona Enter para comenzar a jugar. ")
+    input("\033[33m    Presiona Enter para comenzar a jugar. \033[0m \n")
 
 
 ######################## JUEGOS ########################
@@ -188,10 +181,10 @@ def JuegoMayorMenor():
     # Menú del juego y nombre usuario
     InicioMayorMenor()
     if(nombreUsuarioMayorMenor == ''):
-        nombreUsuarioMayorMenor = input("Ingrese su nombre: ").capitalize()
+        nombreUsuarioMayorMenor = input("\033[33m Ingrese su nombre: \033[0m ").capitalize()
 
     print(f"""
-    BIENVENIDO {nombreUsuarioMayorMenor}!
+    BIENVENIDO \033[32m{nombreUsuarioMayorMenor}\033[0m!
     A - Iniciar juego
     B - Ver reglas
     C - Volver al menu
@@ -208,7 +201,7 @@ def JuegoMayorMenor():
     elif(opcionmenujuego == 'c'):
         finDeJuego = 1
     else:
-        print("Ingrese una opción válida.")
+        print("\033[33mIngrese una opción válida.\033[0m ")
 
 
 
@@ -277,15 +270,15 @@ def JuegoNumeroSecreto():
     # Menú del juego y nombre usuario       
     InicioNumeroSecreto()
     if(nombreUsuarioNumeroSecreto == ''):
-        nombreUsuarioNumeroSecreto = input("Ingrese su nombre: ").capitalize()
+        nombreUsuarioNumeroSecreto = input("\033[33m Ingrese su nombre: \033[0m ").capitalize()
 
     print(f"""
-    BIENVENIDO {nombreUsuarioNumeroSecreto}!
+    BIENVENIDO \033[32m{nombreUsuarioNumeroSecreto}\033[0m!
     A - Iniciar juego
     B - Ver reglas
     C - Volver al menu
     """)
-    opcionmenujuego = input("Seleccione una opción: ").lower()
+    opcionmenujuego = input("\033[33m Seleccione una opción: \033[0m ").lower()
 
     # Opciones del menú del juego
     if (opcionmenujuego == 'a'):
@@ -296,12 +289,14 @@ def JuegoNumeroSecreto():
     elif(opcionmenujuego == 'c'):
         finDeJuego = 1  
     else:
-        print("Ingrese una opción válida.")
+        print("\033[33mIngrese una opción válida.\033[0m ")
 
     while(finDeJuego == 0):
 
+        os.system('cls' if os.name == 'nt' else 'clear')
+
         # Petición y Validación de Tipo de dato ingresado
-        nroIngresado = input("Ingrese un número: ")
+        nroIngresado = input("\033[33mIngrese un número: \033[0m")
         valido = 0
         while (valido == 0):
             try:
@@ -309,22 +304,22 @@ def JuegoNumeroSecreto():
                 valido = 1
             except ValueError:
                 print(f"Intente nuevamente.")
-                nroIngresado = input("Ingrese un número: ")
+                nroIngresado = input("\033[33mIngrese un número: \033[0m")
                 
         # Validación por rango
         while(nroIngresado < 1 or nroIngresado > 100):
             print("El número ingresado debe estar entre 1 y 100.")
-            print("Ingrese otro número:")
+            print("\033[33mIngrese otro número:\033[0m")
             nroIngresado = int(input())
             
         while(nroIngresado != nroAleatorio and IntentosRestantes > 0):
 
             if(nroIngresado > nroAleatorio):
-                print("El número secreto es menor al ingresado.")
+                print("El número secreto es \033[33mmenor\033[0m al ingresado.")
                 IntentosRestantes = IntentosRestantes - 1
 
                 # Petición y Validación de Tipo de dato ingresado
-                nroIngresado = input("Ingrese un número: ")
+                nroIngresado = input("\033[33mIngrese un número: \033[0m")
                 valido = 0
                 while (valido == 0):
                     try:
@@ -332,20 +327,20 @@ def JuegoNumeroSecreto():
                         valido = 1
                     except ValueError:
                         print(f"Intente nuevamente.")
-                        nroIngresado = input("Ingrese un número: ")
+                        nroIngresado = input("\033[33mIngrese un número: \033[0m")
                         
                 # Validación por rango
                 while(nroIngresado < 1 or nroIngresado > 100):
                     print("El número ingresado debe estar entre 1 y 100.")
-                    print("Ingrese otro número:")
+                    print("\033[33mIngrese otro número:\033[0m")
                     nroIngresado = int(input())
 
             elif (nroIngresado < nroAleatorio):
-                print("El número secreto es mayor al ingresado.")
+                print("El número secreto es \033[33mmayor\033[0m al ingresado.")
                 IntentosRestantes = IntentosRestantes - 1
 
                 # Petición y Validación de Tipo de dato ingresado
-                nroIngresado = input("Ingrese un número: ")
+                nroIngresado = input("\033[33mIngrese un número: \033[0m")
                 valido = 0
                 while (valido == 0):
                     try:
@@ -353,12 +348,12 @@ def JuegoNumeroSecreto():
                         valido = 1
                     except ValueError:
                         print(f"Intente nuevamente.")
-                        nroIngresado = input("Ingrese un número: ")
+                        nroIngresado = input("\033[33mIngrese un número: \033[0m")
                         
                 # Validación por rango
                 while(nroIngresado < 1 or nroIngresado > 100):
                     print("El número ingresado debe estar entre 1 y 100.")
-                    print("Ingrese otro número:")
+                    print("\033[33mIngrese otro número:\033[0m")
                     nroIngresado = int(input())
 
             
@@ -368,12 +363,12 @@ def JuegoNumeroSecreto():
             vecesJugadoNumeroSecreto += 1
             ganadasNumeroSecreto += 1
             finDeJuego = 1
-            print("¡Ganaste! El número secreto era:", nroAleatorio)
+            print("\033[32m¡Ganaste!\033[0m El número secreto era:", nroAleatorio)
         else:
             vecesJugadoNumeroSecreto += 1
             perdidasNumeroSecreto += 1
             finDeJuego = 1
-            print("¡Perdiste! El número secreto era:", nroAleatorio)
+            print("\033[31m¡Perdiste!\033[0m El número secreto era:", nroAleatorio)
 
 ######################## C - BLACK JACK ########################
 
@@ -400,15 +395,15 @@ def JuegoParOImpar():
     # Menú del juego y nombre usuario
     InicioParOImpar()
     if(nombreUsuarioParOImpar == ''):
-        nombreUsuarioParOImpar = input("Ingrese su nombre: ").capitalize()
+        nombreUsuarioParOImpar = input("\033[33m Ingrese su nombre: \033[0m ").capitalize()
 
     print(f"""
-    BIENVENIDO {nombreUsuarioParOImpar}!
+    BIENVENIDO \033[32m{nombreUsuarioParOImpar}\033[0m!
     A - Iniciar juego
     B - Ver reglas
     C - Volver al menu
     """)
-    opcionmenujuego = input("Seleccione una opción: ").lower()
+    opcionmenujuego = input("\033[33m Seleccione una opción: \033[0m ").lower()
 
     # Opciones del menú del juego
     if (opcionmenujuego == 'a'):
