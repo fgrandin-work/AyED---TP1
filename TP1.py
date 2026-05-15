@@ -200,6 +200,7 @@ def JuegoNumeroSecreto():
         finDeJuego= 0
     elif(opcionmenujuego == 'b'):
         ReglasNumeroSecreto()
+        finDeJuego = 0
     elif(opcionmenujuego == 'c'):
         finDeJuego = 1  
     else:
