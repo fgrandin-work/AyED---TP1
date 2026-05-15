@@ -316,6 +316,9 @@ def JuegoParOImpar():
     C - Volver al menu
     """)
     opcionmenujuego = input("Seleccione una opción: ").lower()
+    while(opcionmenujuego<"a" or opcionmenujuego>"c"):
+        print("Ingrese una opción válida.")
+        opcionmenujuego = input("Seleccione una opción: ").lower()
 
     # Opciones del menú del juego
     if (opcionmenujuego == 'a'):
@@ -325,8 +328,6 @@ def JuegoParOImpar():
         finDeJuego = 0
     elif(opcionmenujuego == 'c'):
         finDeJuego = 1
-    else:
-        print("Ingrese una opción válida.")
     
     while (finDeJuego == 0):
         dadoA = random.randint(1, 6)
