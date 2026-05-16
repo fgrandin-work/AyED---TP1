@@ -196,6 +196,9 @@ def JuegoMayorMenor():
     """)
 
     opcionmenujuego = input("\033[33m Seleccione una opción: \033[0m ").lower()
+    while(opcionmenujuego<"a" or opcionmenujuego>"c"):
+        print("Ingrese una opción válida.")
+        opcionmenujuego = input("\033[33m Seleccione una opción: \033[0m ").lower()
 
     # Opciones del menú del juego
     if (opcionmenujuego == 'a'):
@@ -206,7 +209,7 @@ def JuegoMayorMenor():
     elif(opcionmenujuego == 'c'):
         finDeJuego = 1
     else:
-        print("\033[33mIngrese una opción válida.\033[0m ")
+        print("Ingrese una opción válida.")
 
 
 
