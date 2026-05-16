@@ -1,6 +1,7 @@
 import random
 import os
 
+
 ######################## Variables de Puntajes Globales ########################
 
 nombreUsuarioMayorMenor = ''
@@ -127,22 +128,23 @@ def ReglasMayorMenor():
 
 def ReglasNumeroSecreto():
     print("""\033[32m
-|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|
-|#|#\033[37m                                                                                                                     \033[32m#|#|
-|#|#\033[37m    REGLAS DE NÚMERO SECRETO:                                                                                        \033[32m#|#|
-|#|#\033[37m                                                                                                                     \033[32m#|#|
-|#|#\033[37m    La computadora piensa un número entre 1 y 100.                                                                   \033[32m#|#|
-|#|#\033[37m    Tu deberás ingresar otro numero entre 1 y 100 intentando adivinar el generado por la máquina.                    \033[32m#|#|
-|#|#\033[37m    En cada intento fallido, el sistema debe indicar si el número secreto es mayor o menor al que vos ingresaste.    \033[32m#|#|
-|#|#\033[37m    Tendrás 5 intentos para adivinarlo.                                                                              \033[32m#|#|
-|#|#                                                                                                                     \033[32m#|#|
-|#|#\033[31m    Pierdes\033[37m si se te agotan los intentos.                                                                            \033[32m#|#|
-|#|#\033[37m    Si aciertas antes de agotarlos,\033[32m ¡GANAS! \033[37m                                                                         \033[32m#|#|
-|#|#\033[37m    * En todos los juegos se guarda el mejor puntaje obtenido (Apartado: E - Reportes) *                             \033[32m#|#|
-|#|#                                                                                                                     \033[32m#|#|
-|#|#\033[37m    Para volver al menú, escriba 'salir'.                                                                            \033[32m#|#|
-|#|#                                                                                                                     \033[32m#|#|
-|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|\033[0m
+|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|
+|#|#\033[37m                                                                                                               \033[32m#|#|
+|#|#\033[37m\tREGLAS DE NÚMERO SECRETO:                                                                                  \033[32m#|#|
+|#|#\033[37m                                                                                                               \033[32m#|#|
+|#|#\033[37m\tLa computadora piensa un número entre 1 y 100.                                                             \033[32m#|#|
+|#|#\033[37m\tTu deberás ingresar otro numero entre 1 y 100 intentando adivinar el generado por la máquina.              \033[32m#|#|
+|#|#\033[37m\tEn cada intento fallido, el sistema debe indicar si el número secreto es mayor o menor                     \033[32m#|#|
+|#|#\033[37m\tal que vos ingresaste.                                                                                     \033[32m#|#|
+|#|#\033[37m\tTendrás 5 intentos para adivinarlo.                                                                        \033[32m#|#|
+|#|#                                                                                                               \033[32m#|#|
+|#|#\033[31m    Pierdes\033[37m si se te agotan los intentos.                                                                      \033[32m#|#|
+|#|#\033[37m    Si aciertas antes de agotarlos,\033[32m ¡GANAS! \033[37m                                                                   \033[32m#|#|
+|#|#\033[37m    * En todos los juegos se guarda el mejor puntaje obtenido (Apartado: E - Reportes) *                       \033[32m#|#|
+|#|#                                                                                                               \033[32m#|#|
+|#|#\033[37m    Para volver al menú, escriba 'salir'.                                                                      \033[32m#|#|
+|#|#                                                                                                               \033[32m#|#|
+|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|\033[0m
     """)
     input("\033[33m    Presiona Enter para comenzar a jugar. \033[0m \n")
 
@@ -171,7 +173,9 @@ def ReglasParOImpar():
 ######################## A - Mayor a menor ########################
 
 def JuegoMayorMenor():
+    global nombreUsuarioMayorMenor
     global puntajeMayorMenor
+    global vecesJugadoMayorMenor
 
     nroAleatorio = random.randint(1,1000)
     nroAleatorioParaaAdivinar = random.randint(1,1000)
@@ -263,7 +267,11 @@ def ValidacionNumeroSecreto(nroIngresado):
         nroIngresado = int(input())
     
 def JuegoNumeroSecreto():
-    global puntajeNumeroSecreto
+    global nombreUsuarioNumeroSecreto
+    global vecesJugadoNumeroSecreto
+    global ganadasNumeroSecreto
+    global perdidasNumeroSecreto
+
     IntentosRestantes = 4
     nroAleatorio = random.randint(1,100)
     finDeJuego= 1
@@ -391,8 +399,10 @@ def JuegoBlackJack():
 ######################## D - Par o impar ########################
 
 def JuegoParOImpar():
-    global puntajeParOImpar
-    puntaje = 0
+    global nombreUsuarioParOImpar
+    global ganadasParOImpar
+    global perdidasParOImpar
+    global vecesJugadoParOImpar
     finDeJuego = 1
 
     # Menú del juego y nombre usuario
