@@ -1,13 +1,5 @@
 import random
 
-
-
-##########################################################
-######### NO FUNCIONA EL NUMERO SECRETO OPCION B #########
-##########################################################
-
-
-
 ######################## Variables de Puntajes Globales ########################
 
 nombreUsuarioMayorMenor = ''
