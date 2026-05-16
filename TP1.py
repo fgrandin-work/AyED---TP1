@@ -3,7 +3,9 @@ import os
 
 ######################## Variables de Puntajes Globales ########################
 
-nombredeuser = ''
+nombreUsuarioMayorMenor = ''
+nombreUsuarioNumeroSecreto = ''
+nombreUsuarioParOImpar = ''
 
 vecesjugadoMyM = 0
 puntajeMayorMenor = 0 
