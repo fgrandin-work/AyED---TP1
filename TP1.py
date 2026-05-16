@@ -128,42 +128,42 @@ def ReglasMayorMenor():
 
 def ReglasNumeroSecreto():
     print("""\033[32m
-|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|
-|#|#\033[37m                                                                                                               \033[32m#|#|
-|#|#\033[37m\tREGLAS DE NÚMERO SECRETO:                                                                                  \033[32m#|#|
-|#|#\033[37m                                                                                                               \033[32m#|#|
-|#|#\033[37m\tLa computadora piensa un número entre 1 y 100.                                                             \033[32m#|#|
-|#|#\033[37m\tTu deberás ingresar otro numero entre 1 y 100 intentando adivinar el generado por la máquina.              \033[32m#|#|
-|#|#\033[37m\tEn cada intento fallido, el sistema debe indicar si el número secreto es mayor o menor                     \033[32m#|#|
-|#|#\033[37m\tal que vos ingresaste.                                                                                     \033[32m#|#|
-|#|#\033[37m\tTendrás 5 intentos para adivinarlo.                                                                        \033[32m#|#|
-|#|#                                                                                                               \033[32m#|#|
-|#|#\033[31m    Pierdes\033[37m si se te agotan los intentos.                                                                      \033[32m#|#|
-|#|#\033[37m    Si aciertas antes de agotarlos,\033[32m ¡GANAS! \033[37m                                                                   \033[32m#|#|
-|#|#\033[37m    * En todos los juegos se guarda el mejor puntaje obtenido (Apartado: E - Reportes) *                       \033[32m#|#|
-|#|#                                                                                                               \033[32m#|#|
-|#|#\033[37m    Para volver al menú, escriba 'salir'.                                                                      \033[32m#|#|
-|#|#                                                                                                               \033[32m#|#|
-|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|\033[0m
+|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|
+|#|#\033[37m                                                                                                     \033[32m#|#|
+|#|#\033[37m\tREGLAS DE NÚMERO SECRETO:                                                                        \033[32m#|#|
+|#|#\033[37m                                                                                                     \033[32m#|#|
+|#|#\033[37m\tLa computadora piensa un número entre 1 y 100.                                                   \033[32m#|#|
+|#|#\033[37m\tTu deberás ingresar otro numero entre 1 y 100 intentando adivinar el generado por la máquina.    \033[32m#|#|
+|#|#\033[37m\tEn cada intento fallido, el sistema debe indicar si el número secreto es mayor o menor           \033[32m#|#|
+|#|#\033[37m\tal que vos ingresaste.                                                                           \033[32m#|#|
+|#|#\033[37m\tTendrás 5 intentos para adivinarlo.                                                              \033[32m#|#|
+|#|#                                                                                                     \033[32m#|#|
+|#|#\033[31m    Pierdes\033[37m si se te agotan los intentos.                                                            \033[32m#|#|
+|#|#\033[37m    Si aciertas antes de agotarlos,\033[32m ¡GANAS! \033[37m                                                         \033[32m#|#|
+|#|#\033[37m    * En todos los juegos se guarda el mejor puntaje obtenido (Apartado: E - Reportes) *             \033[32m#|#|
+|#|#                                                                                                     \033[32m#|#|
+|#|#\033[37m    Para volver al menú, escriba 'salir'.                                                            \033[32m#|#|
+|#|#                                                                                                     \033[32m#|#|
+|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|\033[0m
     """)
     input("\033[33m    Presiona Enter para comenzar a jugar. \033[0m \n")
 
 def ReglasParOImpar():
     print("""\033[32m
-|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|                  
-|#|#\033[37m                                                                                                         \033[32m#|#|
-|#|#\033[37m    REGLAS DE PAR O IMPAR:                                                                               \033[32m#|#|
-|#|#\033[37m                                                                                                         \033[32m#|#|          
-|#|#\033[37m    El programa tira 2 dados y suma ambos resultados (Dado de 6 caras: 1 al 6).                          \033[32m#|#|
-|#|#\033[37m    Sin ver los resultados de los dados deberás indicar si la suma de los números es par o impar.        \033[32m#|#|
-|#|#\033[37m                                                                                                         \033[32m#|#|          
-|#|#\033[37m    Si \033[32maciertas\033[37m sumas 1 punto.                                                                           \033[32m#|#|
-|#|#\033[37m    Si \033[31mte equivocas\033[37m vuelves a 0 puntos.                                                                  \033[32m#|#|
-|#|#\033[37m    * En todos los juegos se guarda el mejor puntaje obtenido(Apartado: E - Reportes) *                  \033[32m#|#|
-|#|#\033[37m                                                                                                         \033[32m#|#|        
-|#|#\033[37m    Para volver al menú, escriba 'salir'.                                                                \033[32m#|#|
-|#|#\033[37m                                                                                                         \033[32m#|#|          
-|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|          
+|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|
+|#|#\033[37m                                                                                                 \033[32m#|#|
+|#|#\033[37m    REGLAS DE PAR O IMPAR:                                                                       \033[32m#|#|
+|#|#\033[37m                                                                                                 \033[32m#|#|          
+|#|#\033[37m    El programa tira 2 dados y suma ambos resultados (Dado de 6 caras: 1 al 6).                  \033[32m#|#|
+|#|#\033[37m    Sin ver los resultados de los dados deberás indicar si la suma de los números es par o impar.\033[32m#|#|
+|#|#\033[37m                                                                                                 \033[32m#|#|          
+|#|#\033[37m    Si \033[32maciertas\033[37m sumas 1 punto.                                                                   \033[32m#|#|
+|#|#\033[37m    Si \033[31mte equivocas\033[37m vuelves a 0 puntos.                                                          \033[32m#|#|
+|#|#\033[37m    * En todos los juegos se guarda el mejor puntaje obtenido(Apartado: E - Reportes) *          \033[32m#|#|
+|#|#\033[37m                                                                                                 \033[32m#|#|        
+|#|#\033[37m    Para volver al menú, escriba 'salir'.                                                        \033[32m#|#|
+|#|#\033[37m                                                                                                 \033[32m#|#|          
+|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|          
     """)
     input("\033[33m    Presiona Enter para comenzar a jugar. \033[0m \n")
 
@@ -208,9 +208,6 @@ def JuegoMayorMenor():
         finDeJuego = 0
     elif(opcionmenujuego == 'c'):
         finDeJuego = 1
-    else:
-        print("Ingrese una opción válida.")
-
 
 
     while(finDeJuego == 0):
@@ -290,10 +287,11 @@ def JuegoNumeroSecreto():
     B - Ver reglas
     C - Volver al menu
     """)
+
     opcionmenujuego = input("\033[33m Seleccione una opción: \033[0m ").lower()
     while(opcionmenujuego<"a" or opcionmenujuego>"c"):
         print("Ingrese una opción válida.")
-        opcionmenujuego = input("Seleccione una opción: ").lower()
+        opcionmenujuego = input("\033[33m Seleccione una opción: \033[0m ").lower()
 
     # Opciones del menú del juego
     if (opcionmenujuego == 'a'):
@@ -419,6 +417,8 @@ def JuegoParOImpar():
     B - Ver reglas
     C - Volver al menu
     """)
+    
+    opcionmenujuego = input("\033[33m Seleccione una opción: \033[0m ").lower()
     while(opcionmenujuego<"a" or opcionmenujuego>"c"):
         print("Ingrese una opción válida.")
         opcionmenujuego = input("\033[33m Seleccione una opción: \033[0m ").lower()
